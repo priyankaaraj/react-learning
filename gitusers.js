@@ -9,7 +9,7 @@ export default class GitUser extends Component {
         length = {this.state.posts.length}
         { 
           this.state.posts.map(x => {
-              return <p>{x.body}</p>
+              return <li>{x.body}</li>
           })
         }
       </div>
