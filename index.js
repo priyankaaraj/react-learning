@@ -1,14 +1,17 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import Hello from './Hello';
 import './style.css';
+
+import Hello from './Hello';
 import GitUser from './gitusers'
+import HelloPriyanka from './helloPriyanka'
 
 class App extends Component {
   constructor() {
     super();
     this.state = {
-      name: 'Priyanka'
+      name: 'React',
+      subject: 'Priyanka'
     };
   }
 
@@ -16,6 +19,7 @@ class App extends Component {
     return (
       <div>
         <Hello name={this.state.name} />
+        <HelloPriyanka subject = {this.state.subject}/>
         <GitUser/>
       </div>
     );

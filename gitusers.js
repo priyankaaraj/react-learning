@@ -2,23 +2,23 @@ import React, { Component } from 'react';
 import axios from 'axios'
 
 export default class GitUser extends Component {
-  state = {posts : []}
+  state = {comments : []}
   render() {
     return (
       <div>
-        length = {this.state.posts.length}
+        <h5>Number of responses = {this.state.comments.length}</h5>
         { 
-          this.state.posts.map(x => {
-              return <li>{x.body}</li>
+          this.state.comments.map(x => {
+              return <li>{x.email}</li>
           })
         }
       </div>
     );  
   }
   componentDidMount(){
-    axios.get('https://jsonplaceholder.typicode.com/posts')
+    axios.get('https://jsonplaceholder.typicode.com/comments')
     .then(res => {
-    this.setState({posts : res.data})
+    this.setState({comments : res.data})
     })
   }
 }
